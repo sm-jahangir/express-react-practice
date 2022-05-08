@@ -17,14 +17,15 @@ const client = new MongoClient(uri, {
 async function run() {
   try {
     await client.connect();
-    const users = client.db("foodExpress").collection("user");
-    app.post("/user", (req, res) => {
-      const newUser = req.body;
-      console.log("adding new user", newUser);
-      res.send({ result: "user data reveived..." });
+    const userCollection = client.db("foodExpress").collection("user");
+
+    app.post("/user", async (request, response) => {
+      const newUser = request.body;
+      console.log(newUser);
+      const result = await userCollection.insertOne(newUser);
+      response.send(result);
     });
   } finally {
-    await client.close();
   }
 }
 run().catch(console.dir);

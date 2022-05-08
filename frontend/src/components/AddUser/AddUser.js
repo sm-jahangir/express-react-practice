@@ -19,6 +19,8 @@ function AddUser() {
       .then((response) => response.json())
       .then((data) => {
         console.log("Success:", data);
+        alert("Users added successfully");
+        event.target.reset();
       })
       .catch((error) => {
         console.error("Error:", error);
