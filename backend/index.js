@@ -18,13 +18,11 @@ async function run() {
   try {
     await client.connect();
     const users = client.db("foodExpress").collection("user");
-    // create a document to insert
-    const user = {
-      name: "Jahangir Alam",
-      email: "admin@email.com",
-    };
-    const result = await users.insertOne(user);
-    console.log(`A User inserted with the _id: ${result.insertedId}`);
+    app.post("/user", (req, res) => {
+      const newUser = req.body;
+      console.log("adding new user", newUser);
+      res.send({ result: "user data reveived..." });
+    });
   } finally {
     await client.close();
   }
