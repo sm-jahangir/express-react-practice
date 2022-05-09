@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Home() {
   const [users, setUsers] = useState([]);
@@ -34,6 +35,9 @@ function Home() {
         {users.map((user) => (
           <li className="my-2" key={user._id}>
             {user.name} :: {user.email}
+            <Link className="btn btn-primary btn-sm" to={`/update/${user._id}`}>
+              Edit
+            </Link>
             <span
               onClick={() => handleUserDelete(user._id)}
               className="btn ms-2 btn-primary btn-sm"
