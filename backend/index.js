@@ -1,6 +1,6 @@
 const express = require("express");
 const cors = require("cors");
-const { MongoClient, ServerApiVersion } = require("mongodb");
+const { MongoClient, ServerApiVersion, ObjectId } = require("mongodb");
 const app = express();
 const port = 5000;
 
@@ -19,17 +19,24 @@ async function run() {
     await client.connect();
     const userCollection = client.db("foodExpress").collection("user");
 
+    // Get all user
     app.get("/user", async (request, response) => {
       const query = {};
       const cursor = userCollection.find(query);
       const users = await cursor.toArray();
       response.send(users);
     });
+    // POST User: add a new user
     app.post("/user", async (request, response) => {
       const newUser = request.body;
       console.log(newUser);
       const result = await userCollection.insertOne(newUser);
       response.send(result);
+    });
+    // delete user
+    app.delete("/user/:id", async (request, response) => {
+      const id = request.params.id;
+      const query = { _id: ObjectId(id) };
     });
   } finally {
   }
