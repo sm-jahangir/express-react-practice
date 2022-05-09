@@ -33,10 +33,12 @@ async function run() {
       const result = await userCollection.insertOne(newUser);
       response.send(result);
     });
-    // delete user
+    // delete user https://www.mongodb.com/docs/drivers/node/current/usage-examples/deleteOne/
     app.delete("/user/:id", async (request, response) => {
       const id = request.params.id;
       const query = { _id: ObjectId(id) };
+      const result = await userCollection.deleteOne(query);
+      response.send(result);
     });
   } finally {
   }
