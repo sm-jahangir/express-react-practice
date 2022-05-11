@@ -31,6 +31,13 @@ async function run() {
       const service = await serviceCollection.findOne(query);
       response.send(service);
     });
+    app.post("/service", async (request, response) => {
+      // create a document to insert
+      const newService = request.body;
+      const result = await serviceCollection.insertOne(newService);
+      response.send(result);
+      console.log(`A document was inserted with the _id: ${result.insertedId}`);
+    });
   } finally {
   }
 }
