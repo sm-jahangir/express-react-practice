@@ -14,12 +14,21 @@ const client = new MongoClient(uri, {
   useUnifiedTopology: true,
   serverApi: ServerApiVersion.v1,
 });
-client.connect((err) => {
-  const collection = client.db("foodExpress").collection("user");
-  // perform actions on the collection object
-  console.log("DB connect");
-  client.close();
-});
+async function run() {
+  try {
+    await client.connect();
+    const productsCollection = client.db("mobileShop").collection("products");
+
+    app.get("/products", async (request, response) => {
+      const query = {};
+      const cursor = productsCollection.find(query);
+      const products = await cursor.toArray();
+      response.send(products);
+    });
+  } finally {
+  }
+}
+run().catch(console.dir);
 
 app.get("/", (req, res) => {
   res.send("Hello World! Running my Node CRUD Server");
