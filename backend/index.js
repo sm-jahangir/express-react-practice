@@ -38,6 +38,17 @@ async function run() {
       response.send(result);
       console.log(`A document was inserted with the _id: ${result.insertedId}`);
     });
+    app.delete("/product/:id", async (request, response) => {
+      const id = request.params.id;
+      const query = { _id: ObjectId(id) };
+      const result = await productsCollection.deleteOne(query);
+      if (result.deletedCount === 1) {
+        console.log("Successfully deleted one document.");
+      } else {
+        console.log("No documents matched the query. Deleted 0 documents.");
+      }
+      response.send(result);
+    });
   } finally {
   }
 }

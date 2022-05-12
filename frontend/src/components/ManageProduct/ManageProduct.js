@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import useProduct from "../../hooks/useProducts";
 
 function ManageProduct() {
@@ -22,7 +23,10 @@ function ManageProduct() {
 
   return (
     <div className="container">
-      <h2>ManageServices</h2>
+      <div className="d-flex justify-content-between">
+        <h2>ManageServices</h2>
+        <Link to="/addproduct">Add New Product</Link>
+      </div>
       {products.map((product) => (
         <div key={product._id}>
           <h4>
