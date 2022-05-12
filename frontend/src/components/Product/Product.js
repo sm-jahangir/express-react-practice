@@ -26,6 +26,12 @@ function Product({ product }) {
           <p>Price: ${price}</p>
         </div>
         <div className="card-footer text-center bg-primary">
+          <button
+            onClick={() => navigateToProductDetails(_id)}
+            className="btn btn-primary"
+          >
+            Details
+          </button>
           <button className="border-0 bg-transparent text-white px-5">
             Add To Cart{" "}
             <span>
