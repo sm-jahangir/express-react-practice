@@ -18,6 +18,9 @@ async function run() {
   try {
     await client.connect();
     const productsCollection = client.db("mobileShop").collection("products");
+    const emajohnproductsCollection = client
+      .db("mobileShop")
+      .collection("jmajohnproducts");
 
     app.get("/products", async (request, response) => {
       const query = {};
@@ -48,6 +51,15 @@ async function run() {
         console.log("No documents matched the query. Deleted 0 documents.");
       }
       response.send(result);
+    });
+
+    // Module 67 work Start Here
+    app.get("/productCount", async (request, response) => {
+      const query = {};
+      const cursor = emajohnproductsCollection.find(query);
+      const count = await cursor.count();
+      // response.json(count) //ba nicher ta
+      response.send({ count });
     });
   } finally {
   }
