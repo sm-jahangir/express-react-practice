@@ -1,0 +1,98 @@
+[
+    {
+      "id": "1",
+      "name": "HP Herobook-pro",
+      "price": 420,
+      "stock": 20,
+      "img": "./products/herobook-pro-1-228x228.jpg",
+      "quantity": 0
+    },
+    {
+      "id": "2",
+      "name": "HP 15s-du1115tu Celeron",
+      "price": 440,
+      "stock": 21,
+      "img": "./products/15s-du1115tu-01-228x228.jpg",
+      "quantity": 0
+    },
+    {
+      "id": "3",
+      "name": "Lenovo IdeaPad Slim 3i 15IGL Intel Celeron",
+      "price": 450,
+      "stock": 24,
+      "img": "./products/ideapad-slim-3i-0010-228x228.jpg",
+      "quantity": 0
+    },
+    {
+      "id": "4",
+      "name": "Dell Inspiron 15 3510 Intel Celeron",
+      "price": 350,
+      "stock": 24,
+      "img": "./products/inspiron-15-3510-01-228x228.jpg",
+      "quantity": 0
+    },
+    {
+      "id": "5",
+      "name": "Lenovo IdeaPad Slim 3i Celeron",
+      "price": 250,
+      "stock": 24,
+      "img": "./products/slim-3i-001-228x228.jpg",
+      "quantity": 0
+    },
+    {
+      "id": "6",
+      "name": "Lenovo IdeaPad D330 10IGL",
+      "price": 390,
+      "stock": 24,
+      "img": "./products/d330-1-228x228.jpg",
+      "quantity": 0
+    },
+    {
+      "id": "7",
+      "name": "Apple MacBook Air",
+      "price": 350,
+      "stock": 24,
+      "img": "./products/macbook-mgn73Zp-a-228x228.jpg",
+      "quantity": 0
+    },
+    {
+      "id": "8",
+      "name": "Apple MacBook Air",
+      "price": 750,
+      "stock": 24,
+      "img": "./products/macbook-air-silver-010-228x228.jpg",
+      "quantity": 0
+    },
+    {
+      "id": "9",
+      "name": "Samsung Galaxy Book Pro 360",
+      "price": 550,
+      "stock": 24,
+      "img": "./products/galaxy-book-pro-360-003-228x228.jpg",
+      "quantity": 0
+    },
+    {
+      "id": "10",
+      "name": "Samsung Galaxy Book Pro Core",
+      "price": 750,
+      "stock": 24,
+      "img": "./products/galaxy-book-pro-002-228x228.jpg",
+      "quantity": 0
+    },
+    {
+      "id": "11",
+      "name": "Apple iPad 10.2 inch MK2K3ZP/A",
+      "price": 750,
+      "stock": 24,
+      "img": "./products/apple-ipad-space gray-01-228x228.jpg",
+      "quantity": 0
+    },
+    {
+      "id": "12",
+      "name": "Microsoft Surface Go 2 Pentium",
+      "price": 650,
+      "stock": 24,
+      "img": "./products/surface-go-2-228x228.jpg",
+      "quantity": 0
+    }
+  ]
