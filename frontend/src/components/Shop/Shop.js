@@ -1,14 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+import useProduct from "../../hooks/useProducts";
 import Product from "../Product/Product";
 
 function Shop() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:4000/products")
-      .then((res) => res.json())
-      .then((data) => setProducts(data));
-  }, []);
+  const [products] = useProduct();
   return (
     <div className="container my-5">
       <div className="d-flex">
