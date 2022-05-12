@@ -15,7 +15,7 @@ function Shop() {
         <div className="ms-4">
           <div className="row row-cols-1 row-cols-md-4 g-4">
             {products.map((product) => (
-              <Product key={product.id} product={product}></Product>
+              <Product key={product._id} product={product}></Product>
             ))}
           </div>
         </div>
