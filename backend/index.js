@@ -31,6 +31,13 @@ async function run() {
       const product = await productsCollection.findOne(query);
       response.send(product);
     });
+    app.post("/product", async (request, response) => {
+      // create a document to insert
+      const newProduct = request.body;
+      const result = await productsCollection.insertOne(newProduct);
+      response.send(result);
+      console.log(`A document was inserted with the _id: ${result.insertedId}`);
+    });
   } finally {
   }
 }

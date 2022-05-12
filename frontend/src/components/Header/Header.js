@@ -36,6 +36,11 @@ function Header() {
                 Shop
               </Link>
             </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/addproduct">
+                Add Product
+              </Link>
+            </li>
           </ul>
         </div>
       </div>
