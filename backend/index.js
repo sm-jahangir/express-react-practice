@@ -17,6 +17,7 @@ async function run() {
   try {
     await client.connect();
     const serviceCollection = client.db("geniusCar").collection("service");
+    const orderCollection = client.db("geniusCar").collection("order");
 
     // Get all services
     app.get("/services", async (request, response) => {
@@ -48,6 +49,13 @@ async function run() {
       } else {
         console.log("No documents matched the query. Deleted 0 documents.");
       }
+      response.send(result);
+    });
+
+    // Order Collection API
+    app.post("/order", async (request, response) => {
+      const order = request.body;
+      const result = await orderCollection.insertOne(order);
       response.send(result);
     });
   } finally {
