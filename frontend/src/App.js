@@ -12,6 +12,13 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
       </Routes>
+
+      <h1>
+        Module 68{" "}
+        <a href="https://github.com/sm-jahangir/genius-car-module-68-frontend">
+          Go to Client Site
+        </a>
+      </h1>
     </div>
   );
 }
